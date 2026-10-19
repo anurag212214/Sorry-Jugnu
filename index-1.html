@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100b20">
+<title>For Meri Jugnu ❤️</title>
+<style>
+:root{--pink:#ff8fbd;--rose:#ff5f9e;--cream:#fff2f7;--lav:#c7a7ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;overflow-x:hidden;color:var(--cream);font-family:Georgia,'Times New Roman',serif;background:radial-gradient(ellipse at 50% 0%,#39204c 0%,#1a102b 42%,#090813 100%);}
+#stars,.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.3;animation:twinkle 3s infinite ease-in-out alternate}
+@keyframes twinkle{from{opacity:.15;transform:scale(.7)}to{opacity:.9;transform:scale(1.5)}}
+.wrap{position:relative;z-index:1;width:min(760px,92%);margin:auto;padding:48px 0 60px;text-align:center}
+.eyebrow{font:12px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#e4c7ff;opacity:.9;animation:fadeUp 1s both}
+.title{font-size:clamp(38px,9vw,68px);line-height:1.04;margin:17px 0 12px;font-weight:normal;color:#fff4fb;text-shadow:0 0 25px #ff74b35c;animation:fadeUp 1.2s both}
+.title span{display:inline-block;color:var(--pink);animation:heartbeat 2s infinite}
+.subtitle{font:15px/1.8 Arial,sans-serif;color:#e5d6e9;max-width:500px;margin:0 auto 28px;animation:fadeUp 1.4s both}
+@keyframes heartbeat{0%,100%{transform:scale(1)}12%{transform:scale(1.15)}24%{transform:scale(1)}36%{transform:scale(1.1)}48%{transform:scale(1)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.orbit{height:170px;width:170px;margin:22px auto 24px;position:relative;display:grid;place-items:center;border:1px solid #ffaddb57;border-radius:50%;box-shadow:0 0 45px #ff6aa522,inset 0 0 30px #c18dff15;animation:float 4s ease-in-out infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #c7a7ff48;border-radius:50%;inset:13px;animation:spin 12s linear infinite}
+.orbit:after{inset:-8px;border-color:#ff8fbd36;animation-direction:reverse;animation-duration:18s}
+.orbit .bigheart{font-size:70px;filter:drop-shadow(0 0 17px #ff4f9a);animation:heartbeat 2.3s infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes float{50%{transform:translateY(-9px)}}
+.btn{border:1px solid #ffb8d9a8;border-radius:999px;padding:13px 22px;color:#fff;background:linear-gradient(120deg,#a83c79,#7046a1);font:14px Arial,sans-serif;letter-spacing:.4px;box-shadow:0 8px 28px #e94c972e;cursor:pointer;transition:.25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px #e94c9755}
+.card{margin:34px auto 0;padding:27px clamp(18px,5vw,38px);max-width:620px;text-align:left;border:1px solid #ffb4d52c;border-radius:23px;background:linear-gradient(145deg,#ffffff0d,#ffffff04);box-shadow:0 20px 60px #00000020;backdrop-filter:blur(10px);opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s;display:none}
+.card.show{display:block;opacity:1;transform:translateY(0);animation:fadeUp .8s both}
+.card h2{text-align:center;font-weight:normal;font-size:clamp(25px,6vw,34px);color:#ffc0dc;margin:0 0 19px}
+.card p{font:15px/1.95 Arial,sans-serif;color:#f5eaf4;margin:0 0 14px}
+.signature{text-align:right;color:#ffc1df;font-size:22px;margin-top:22px;font-style:italic}
+.divider{margin:30px auto 22px;width:90px;height:1px;background:linear-gradient(90deg,transparent,#ff9ac8,transparent)}
+.note{font:12px/1.8 Arial,sans-serif;color:#c8b9d2;max-width:440px;margin:22px auto 0}
+.hidden{display:none!important}
+.choices{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+.choice{border:1px solid #ffaddb55;background:#ffffff0a;color:#ffe8f4;padding:11px 16px;border-radius:14px;font:13px Arial,sans-serif;cursor:pointer;transition:.2s}
+.choice:hover{background:#ff8fbd20;transform:translateY(-2px)}
+.response{min-height:24px;text-align:center;color:#ffc0dc;font:14px/1.7 Arial,sans-serif;margin:18px 0 0}
+.final-wrap{max-width:620px;margin:24px auto 0;text-align:center}
+.final-btn{margin-top:10px;background:linear-gradient(120deg,#6746a0,#b34f89)}
+.final-letter{display:none;position:relative;overflow:hidden;margin:22px auto 0;padding:clamp(22px,5vw,38px);text-align:left;border:1px solid #ffb4d566;border-radius:24px;background:linear-gradient(145deg,#2d1a3deF,#170f29f2);box-shadow:0 0 35px #ff8fbd20,0 20px 60px #0005}
+.final-letter.show{display:block;animation:letterReveal 1s cubic-bezier(.2,.8,.2,1) both}
+.final-letter:before{content:"♡";position:absolute;right:12px;top:-30px;font-size:100px;color:#ff8fbd13;animation:float 4s ease-in-out infinite;pointer-events:none}
+.final-letter h2{text-align:center;font-weight:normal;color:#ffc0dc;font-size:clamp(25px,6vw,34px);margin:0 0 20px;text-shadow:0 0 18px #ff5f9e55}
+.final-letter p{position:relative;font:15px/2 Arial,sans-serif;color:#f5eaf4;margin:0 0 15px}
+.final-letter .highlight{text-align:center;color:#ffd0e5;font-size:17px;line-height:1.9;padding:13px 0}
+.final-letter .signature{position:relative}
+@keyframes letterReveal{from{opacity:0;transform:translateY(28px) scale(.97);filter:blur(5px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+.float-heart{position:absolute;bottom:-35px;animation:rise linear forwards;opacity:0;color:#ff91c1;text-shadow:0 0 12px #ff4d9b}
+@keyframes rise{0%{transform:translateY(0) rotate(0deg) scale(.7);opacity:0}12%{opacity:.8}85%{opacity:.6}100%{transform:translateY(-110vh) rotate(30deg) scale(1.35);opacity:0}}
+footer{position:relative;z-index:1;text-align:center;padding:0 18px 30px;color:#9d8aa9;font:11px Arial,sans-serif;letter-spacing:1px}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="stars"></div><div class="hearts" id="hearts"></div>
+<main class="wrap">
+  <div class="eyebrow">a little note from my heart</div>
+  <h1 class="title">Hey, Meri <span>Jugnu</span> ❤️</h1>
+  <p class="subtitle">Kabhi-kabhi dil ki baat kehne ka tareeka sahi nahi hota…<br>par uske peeche ka pyaar sach hota hai.</p>
+  <div class="orbit"><div class="bigheart">💗</div></div>
+  <button class="btn" id="openBtn">Dil ki baat sunogi? ✨</button>
+  <section class="card" id="letter" aria-live="polite">
+    <h2>I'm sorry, meri Jugnu 🥺</h2>
+    <p>Jugnu, main tumse ladna nahi chahta tha, na hi tumhe hurt karna. ❤️</p>
+    <p>Main tumse pyaar karta hoon, isliye jab koi baat mujhe buri lagti hai toh tumse hi keh deta hoon. Tumhe apna samajhta hoon… aur shayad kabhi-kabhi apni feelings samjhate hue mere words sahi nahi hote.</p>
+    <p>Mera maksad tumhe galat prove karna ya tum par apni baat thopna nahi tha. Bas jo mere dil mein tha, woh tumse share kar diya. Agar mere kehne ka tareeka tumhe bura laga, toh dil se sorry. 🫶</p>
+    <p>Main chahta hoon ki hum ek-doosre ki baat sukoon se samjhein. Main bhi tumhari feelings sunna aur samajhna chahta hoon. Tum par abhi reply karne ya kuch bhi decide karne ka koi pressure nahi hai.</p>
+    <p>Bas itna yaad rakhna—meri narazgi se zyada tum mere liye important ho. Main apni galti samajhne aur apne tareeke ko behtar karne ki koshish karunga. ❤️</p>
+    <div class="signature">— Sir ji ❤️</div>
+    <div class="divider"></div>
+    <p style="text-align:center;margin-bottom:8px">Agar tum chaho, toh hum araam se baat kar sakte hain. 🌷</p>
+    <div class="choices">
+      <button class="choice" data-message="Thank you meri Jugnu… main tumhari baat bhi poore dil se sununga. ❤️">Ek hug? 🫂</button>
+      <button class="choice" data-message="Koi jaldi nahi hai. Jab tum comfortable ho, tab baat kar lenge. 🌷">Thoda time chahiye 🌷</button>
+      <button class="choice" data-message="Bas itna hi chahta tha ki tum meri baat jaan sako. Take care, meri Jugnu. 💗">Bas padh liya 💗</button>
+    </div>
+    <div class="response" id="response"></div>
+  </section>
+  <div class="final-wrap">
+    <div class="divider"></div>
+    <p class="note">Aur aakhir mein… dil ki ek aur baat hai. 💌</p>
+    <button class="btn final-btn" id="finalBtn">Aakhir mein kuch kehna hai… 💗</button>
+    <section class="final-letter" id="finalLetter" aria-live="polite">
+      <h2>Jugnu, bas ek baar dil se sunna… 🥹❤️</h2>
+      <p>Hum dono aise hi ek-doosre se gussa hote rahe, ek-doosre ko galat samajhte rahe, toh aakhir mein sab kharab hi hoga na? Toh kyun na hum apne gusse aur narazgiyon ko thoda side mein rakhkar, jo kuch hua usse seekhkar, phir se achhe se rehne ki koshish karein? ❤️‍🩹</p>
+      <p>Hum dono ne ek-doosre ke liye bahut kuch kiya hai. Tumhari thodi si narazgi door karne ke liye main Delhi tak chala gaya tha, kyunki tum mere liye important ho. Aur tumne bhi meri khushi ke liye Aniket ko Delhi aane se mana kiya tha. Main jaanta hoon ki tumne bhi mere liye bahut kuch kiya hai, aur main un sab cheezon ki dil se kadar karta hoon. 🫶</p>
+      <p>Bas ek baat hai jo shayad main tumhe theek se samjha nahi paaya. Main tumse pyaar karta hoon aur tumhe apna maanta hoon. Isliye jab koi baat mujhe takleef deti hai, toh main kabhi-kabhi darr aur insecurity mein bina soche-samjhe bol deta hoon. Tumhe kisi aur ke saath dekhne ka khayal bhi mujhe bura feel karata hai. Main ye nahi keh raha ki meri har baat sahi thi—bas chahta tha ki tum meri feelings samjho.</p>
+      <p>Maine tumhe apna samjha, toh bina soche-samjhe tumse apne dil ki baat keh di. Mujhe laga tumse nahi kahunga toh kisse kahunga? Lekin agar mere kehne ke tareeke se tumhe dukh hua, toh mujhe sach mein afsos hai. <strong>I'm genuinely sorry, Jugnu. 🥺</strong></p>
+      <p>Main tumse ladna nahi chahta tha, na tumhe galat saabit karna. Main chahta hoon ki hum dono ek-doosre ki baat shaanti se sunein, apni galti samjhein aur gusse se zyada ek-doosre ki kadar karein.</p>
+      <p class="highlight">Hum dono perfect nahi hain, Jugnu…<br>par kya hum ek-doosre ko samajhne ki ek aur koshish kar sakte hain? 🫂❤️</p>
+      <p>Main tumse ye nahi keh raha ki tum sab kuch bhool jao ya sirf meri baat maano. Main bas chahta hoon ki hum dono milkar cheezein behtar karne ki koshish karein. Tumhare dil mein jo hai, main woh bhi bina beech mein roke samajhna chahta hoon. Tum par koi pressure nahi hai—bas apni baat tum tak pyaar se pahunchana chahta tha.</p>
+      <p class="highlight">Gussa chhodkar, ek-doosre ko galat samajhna chhodkar…<br>kya hum phir se achhe se rehne ki koshish kar sakte hain? 💗</p>
+      <div class="signature">— Sir ji ❤️</div>
+    </section>
+  </div>
+  <p class="note">No pressure, no expectations—bas ek sachchi si sorry, dil se. ❤️</p>
+</main>
+<footer>MADE WITH LOVE, JUST FOR JUGNU ✦</footer>
+<script>
+// Tiny stars in the background
+const starBox=document.getElementById('stars');
+for(let i=0;i<90;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=(Math.random()*4)+'s';s.style.animationDuration=(2+Math.random()*4)+'s';starBox.appendChild(s)}
+// Floating hearts
+const heartBox=document.getElementById('hearts');
+function makeHeart(){const h=document.createElement('span');h.className='float-heart';h.textContent=['♡','♥','💗','✦'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'%';h.style.fontSize=(12+Math.random()*18)+'px';h.style.animationDuration=(7+Math.random()*7)+'s';heartBox.appendChild(h);setTimeout(()=>h.remove(),14500)}
+setInterval(makeHeart,650);
+document.getElementById('openBtn').addEventListener('click',()=>{const letter=document.getElementById('letter');letter.classList.add('show');document.getElementById('openBtn').textContent='Dil se, sirf tumhare liye ❤️';document.getElementById('openBtn').disabled=true;letter.scrollIntoView({behavior:'smooth',block:'start'});for(let i=0;i<14;i++)setTimeout(makeHeart,i*100)});
+document.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>{document.getElementById('response').textContent=btn.dataset.message;for(let i=0;i<5;i++)setTimeout(makeHeart,i*130)}));
+document.getElementById('finalBtn').addEventListener('click',()=>{const finalLetter=document.getElementById('finalLetter');finalLetter.classList.add('show');document.getElementById('finalBtn').textContent='Dil ki baat, sirf tumhare liye ❤️';document.getElementById('finalBtn').disabled=true;finalLetter.scrollIntoView({behavior:'smooth',block:'start'});for(let i=0;i<22;i++)setTimeout(makeHeart,i*90)});
+</script>
+</body>
+</html>
